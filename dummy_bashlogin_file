@@ -1,0 +1,29 @@
+# Mark's bash profile
+
+# User-specific prompt
+# export PS1="\[\033[1;34m\][\u@\h \W]$\[\033[0m\] "
+
+# Custom user aliases
+
+alias rm='rm -i'
+alias ll='ls -lah'
+alias grep='grep --colour'
+
+# set up colours
+
+export CLICOLOR=1
+export LSCOLORS=GxFxCxDxBxegedabagaced
+
+# cod node specific variables
+export PATH=/projects/cees/bin:/projects/cees/scripts:$PATH
+umask 0002
+module use --append /projects/cees/bin/modules
+
+# colourful path
+magenta=$(  tput setaf 5)
+cyan=$(     tput setaf 6)
+green=$(    tput setaf 2)
+yellow=$(   tput setaf 3)
+reset=$(    tput sgr0)
+bold=$(     tput bold)
+export PS1="\[$magenta\]\t\[\$reset\]-\[\$cyan\]\u\[\$reset\]@\[\$green\]\h:\[\$reset\]\[\$yellow\]\w\[\$reset\]\$ "
